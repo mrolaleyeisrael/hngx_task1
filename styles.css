@@ -1,0 +1,62 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.flex_col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.flex_row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.my_details_container {
+  display: flex;
+  height: 100vh;
+  flex-direction: row;
+  justify-content: center;
+  gap: 100px;
+  align-items: center;
+}
+
+.my_picture {
+  height: 300px;
+  width: 300px;
+  border-radius: 100%;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 5px;
+}
+.name_track{
+  margin-bottom: 0px;
+  padding: 0px;
+}
+
+.link {
+  padding: 10px 20px;
+  background-color: blue;
+  border-radius: 10px;
+  width: fit-content;
+  text-decoration: none;
+  color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  .my_details_container {
+
+flex-direction: column;
+gap: 40px;
+  }
+}
