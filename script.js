@@ -1,24 +1,44 @@
 // Simulate real-time data updates
 function updateData() {
-  const saysOfTheWeek = [
-    Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
-  ]
 
-  const currentDate = new Date()
-  const currentDateElement = document.querySelector('data-testid=""]')
-  const temperatureElement = document.querySelector('[data-testid="temperature"]');
-  const humidityElement = document.querySelector('[data-testid="humidity"]');
+  const daysOfWeek = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
 
-  // Simulated data values (replace with actual data fetching)
-  const temperature = Math.floor(Math.random() * 100);
-  const humidity = Math.floor(Math.random() * 100);
+  // const currentDate = new Date()
 
-  temperatureElement.textContent = `${temperature}°C`;
-  humidityElement.textContent = `${humidity}%`;
+  // const currentDayOfTheWeekElement = document.querySelector('[data-testid="currentDayOfTheWeek"]');
 
-  // Update data every 5 seconds
-  setTimeout(updateData, 5000);
+  // const currentUTCtimeElement = document.querySelector('[data-testid="currentUTCTime"]');
+
+  // const currentDay = daysOfWeek[currentDate.getUTCDay()];
+  // currentDayOfTheWeekElement.textContent = currentDay;
+  // currentUTCtimeElement.textContent =
+
+
+  const currentDate = new Date();
+  const currentDayOfTheWeekElement = document.querySelector('[data-testid="currentDayOfTheWeek"]');
+  const currentUTCtimeElement = document.querySelector('[data-testid="currentUTCTime"]');
+  const currentDay = daysOfWeek[currentDate.getUTCDay()];
+
+  console.log(currentDay)
+
+  currentDayOfTheWeekElement.textContent = currentDay;
+  const currentUtcTime = currentDate.toLocaleTimeString("en-US", {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    timeZoneName: "short",
+  });
+  currentUTCtimeElement.textContent = currentUtcTime;
 }
 
 // Initialize the data update process
 updateData();
+setInterval(updateDateTime, 1000);
